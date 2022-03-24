@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!--Fonts
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap" rel="stylesheet">--->
+    <title>Kalkulator Gaji Karyawan</title>
+    <!--CSS Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <!--JS Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!--CSS style
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito&family=Poppins&display=swap');
+
+        * {
+            font-family: "Nunito", sans-serif !important;
+        }
+    </style>-->
+</head>
+
+<body>
+    <section>
+        <div class="parent">
+            <center>
+                <div class="child-left text-white">
+                    <h1><b>APLIKASI MENGHITUNG</b></h1>
+                    <h1><b>GAJI KARYAWAN</b></h1>
+                    <img src="./image/work.svg" alt="gambar" width="400px" height="230px">
+                    <p>Klik, klik, klik, Gaji sudah terlihat...</p>
+                </div>
+            </center>
+            <div class="child-right text-secondary">
+                <div class="box">
+                    <div class="header">
+                        <h4>Selamat Datang</h4>
+                        <h5>Silahkan isi data dengan benar!</h5>
+                    </div>
+                    <div class="form">
+                        <!--Masukkan Nomor NIK-->
+                        <label class="nik">NIK</label>
+                        <input type="text" id="nik" placeholder="Masukan angka 16 digit" required>
+                        <!--Masukkan Nama-->
+                        <label class="nama">Nama</label>
+                        <input type="text" id="nama" placeholder="Masukan Nama" required>
+                        <!--Input Jenis Kelamin-->
+                        <label class="jk">Jenis Kelamin</label>
+                        <select id="jk">
+                            <option>Laki-laki</option>
+                            <option>Perempuan</option>
+                        </select>
+                        <!--Pilih Golongan Kerja-->
+                        <label class="golongan">Golongan Kerja</label>
+                        <select id="golongan">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <!--Masukkan Nilai Gaji Pokok-->
+                        <label class="status">Status</label>
+                        <select id="status">
+                            <option>Kawin</option>
+                            <option>Belum Kawin</option>
+                            <option>Single Parent</option>
+                        </select>
+                        <label class="lembur">Jam Lembur</label>
+                        <!--Masukkan Nilai Gaji Pokok-->
+                        <select id="lembur">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button data-bs-toggle="modal" type="submit" onclick="hasil()"
+                            data-bs-target="#exampleModal">Hitung</button>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">HASIL</h1>
+                </div>
+                <div class="modal-body">
+                    <!-- OUTPUT-->
+                    <div>
+                        <h6>Nama</h6>
+                        <h4 id="output_nama" class="modal-nama"></h4>
+                    </div>
+                    <div>
+                        <h6>NIK</h6>
+                        <h4 id="output_nik" class="modal-nik"></h4>
+                    </div>
+                    <div>
+                        <h6>Jenis Kelamin</h6s>
+                            <h4 id="output_jk"></h4>
+                    </div>
+                    <div>
+                        <h6>Golongan</h6>
+                        <h4 id="output_gol"></h4>
+                    </div>
+                    <div>
+                        <h6>Gaji Pokok</h6>
+                        <h4 id="total_gapok"></h4>
+                    </div>
+                    <div>
+                        <h6>Status </h6>
+                        <h4 id="output_status"></h4>
+                    </div>
+                    <div>
+                        <h6>Tunjangan</h6>
+                        <h4 id="total_tunjangan"></h4>
+                    </div>
+                    <div>
+                        <h6>Lembur </h6>
+                        <h4 id="output_lembur"></h4>
+                    </div>
+                    <div>
+                        <h6>Potongan</h6>
+                        <h4 id="total_potongan"></h4>
+                    </div>
+                    <hr>
+                    <div class="total_gaji">
+                        <h6>Total Gaji</h6>
+                        <h1 id="total"></h1>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

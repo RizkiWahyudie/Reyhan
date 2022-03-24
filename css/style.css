@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+
+body{
+  background-color: #42C2FF !important;
+  margin: 0;
+  padding: 0;
+}
+
+.header h5{
+  color: grey;
+}
+
+.parent{
+  border: 3px solid #42C2FF;
+  padding: 20px;
+}
+
+.child-left{
+  width: 50%;
+  float: left;
+  padding: 20px;
+  margin-top: 150px;
+}
+
+.child-left img{
+  margin: 20px 0;
+}
+
+.child-right{
+  width: 50%;
+  float: right;
+  padding: 20px;
+}
+
+.form {
+  display: grid;
+  padding: 1em;
+  background: #fff;
+  margin: 0 2rem 2rem 2rem;
+  max-width: 600px;
+  padding: 0 1em 1em 1em;
+}
+
+.form button {
+  color: #fff;
+  background: #42C2FF;
+  padding: 0.7em;
+  width: 100%;
+  border: 0;
+}
+
+.reset {
+  color: #fff;
+  background: #42C2FF;
+  padding: 0.7em;
+  width: 100%;
+  border: 0;
+}
+
+input:focus, select:focus {
+  outline: 3px solid #42C2FF;
+}
+
+input, select{
+  color: grey;
+  padding: 5px;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+}
+
+label {
+  padding: 0.5em 0.5em 0.5em 0;
+}
+
+.box{
+  background-color: #ffff;
+  width: 500px;
+  margin: 10px auto;
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+
+.header{
+  text-align: center;
+  color: #42C2FF;
+}
+
+.modal-title{
+  color: #42C2FF;
+}
+
+.modal-header{
+    display: block !important;
+    text-align: center;
+}
+
+@media screen and (max-width: 692px)   {
+    .child-left, .child-right{
+        width:100%;   
+        float:none;
+    }
+    
+}
+
